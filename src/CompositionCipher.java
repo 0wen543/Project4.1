@@ -23,16 +23,16 @@ public class CompositionCipher extends Cipher{
     }
 
 
-    //need to rework to do its job
+    //need to rework to do its job with V cipher
     public char encrypt(char c){
-        for(int i=0; i<ciphers.size();i++){
+        for(int i=0; i<ciphers.size(); i++){
             c=ciphers.get(i).encrypt(c);
         }
         return c;
     }
 
 
-    //need to rework to do its job
+    //need to rework to do its job with V cipher
     public char decrypt(char c){
         for(int i=ciphers.size()-1; i>=0; i--){
             c=ciphers.get(i).decrypt(c);
