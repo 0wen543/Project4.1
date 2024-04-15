@@ -25,7 +25,7 @@ public class CompositionCipher extends Cipher{
 
     //need to rework to do its job
     public char encrypt(char c){
-        for(int i=0; i< ciphers.size();i++){
+        for(int i=0; i<ciphers.size();i++){
             c=ciphers.get(i).encrypt(c);
         }
         return c;
@@ -34,7 +34,7 @@ public class CompositionCipher extends Cipher{
 
     //need to rework to do its job
     public char decrypt(char c){
-        for(int i=0; i< ciphers.size();i++){
+        for(int i=ciphers.size()-1; i>=0; i--){
             c=ciphers.get(i).decrypt(c);
         }
         return c;

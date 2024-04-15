@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class VigenereCipher extends Cipher{
 
-    private ArrayList<Cipher> subCiphers;
+    private ArrayList<CaesarCipher> subCiphers;
 
-    // These variables keep track of which
+    //  These variables keep track of which
     //  CaesarCipher to use for the next encrypt
     //  or decrypt operation, respectively.
     private int nextIndexForEncrypt;
@@ -27,11 +27,11 @@ public class VigenereCipher extends Cipher{
         this.subCiphers=other.getCiphers();
     }
 
-    public ArrayList<Cipher> getCiphers(){
-        ArrayList<Cipher> newCipher = new ArrayList<>(subCiphers);
+    public ArrayList<CaesarCipher> getCiphers(){
+        ArrayList<CaesarCipher> newCipher = new ArrayList<>(subCiphers);
 
-        for(Cipher c: subCiphers){
-            Cipher newC = c.newCopy();
+        for(CaesarCipher c: subCiphers){
+            CaesarCipher newC = new CaesarCipher(c);
             newCipher.add(newC);
         }
         return newCipher;
